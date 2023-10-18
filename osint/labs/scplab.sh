@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# Connect to qwiklabs via ssh, 
+# Download qwiklabs resources via scp, 
 # replacing username, ipaddress and keyfilename first 
 
 username="student-00-d5d35fbcb3ed"
@@ -9,4 +9,4 @@ keyfilename="qwiklabs-L79440969.pem"
 
 keyfile="/home/v4l4nd3/Descargas/${keyfilename}"
 chmod 600 ${keyfile}
-ssh -i ${keyfile} ${username}@${ipaddress}
+scp -i ${keyfile} -r ${username}@${ipaddress}:/home/${username} ./
